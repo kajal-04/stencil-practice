@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web Components</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 2rem;
+        font-family: sans-serif;
+      }
+    </style>
+    <script src="modal.js" defer></script> <!-- Ensure modal.js contains the ka-modal definition -->
+  </head>
+  <body>
+    <ka-modal id="modalElement">
+      <p>With your confirmation you agree to pay the full amount.</p>
+    </ka-modal>
+    <p>Please confirm your choice</p>
+    <button id="confirmButton">Show Details & Confirm</button>
+    <script>
+      document.getElementById('confirmButton').addEventListener('click', function() {
+        const modal = document.getElementById('modalElement');
+        modal.setAttribute('opened', '');
+      });
+    </script>
+  </body>
+</html>
