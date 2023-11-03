@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/stencil-practice-1.esm.js"></script>
+    <script nomodule src="/build/stencil-practice-1.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .side-nav ul {
+        list-style: none;
+      }
+
+      .side-nav a {
+        text-decoration: none;
+        color: #e2a431;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="side-drawer-btn">Open side menu</button>
+    <ka-side-drawer side-drawer-title="Main Menu">
+      <nav class="side-nav">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="./">Company</a></li>
+          <li><a href="./">Task</a></li>
+        </ul>
+      </nav>
+    </ka-side-drawer>
+    <script>
+      const sideDrawerButton = document.querySelector('#side-drawer-btn');
+      const sideDrawer = document.querySelector('ka-side-drawer');
+      sideDrawerButton.addEventListener('click', () => {
+        if(!sideDrawer.opened) {
+          // sideDrawer.open = true;
+          sideDrawer.open();
+        }
+      })
+      // setTimeout(() => {
+      //   // sideDrawer.sideDrawerTitle = 'It changed';
+      //   // sideDrawer.setAttribute('side-drawer-title', 'changes by attribute');
+      // }, 3000);
+    </script>
+  </body>
+</html>
